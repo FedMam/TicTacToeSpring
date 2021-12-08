@@ -1,4 +1,71 @@
 // Function called whenever user tab on any box
+
+let b = [document.getElementById("b1").value,
+    document.getElementById("b2").value,
+    document.getElementById("b3").value,
+    document.getElementById("b4").value,
+    document.getElementById("b5").value,
+    document.getElementById("b6").value,
+    document.getElementById("b7").value,
+    document.getElementById("b8").value,
+    document.getElementById("b9").value];
+
+let turn_x = true;
+let left = 9;
+
+function reset()
+{
+    location.reload();
+    toggleAll(false);
+    for (let i = 0; i < 9; i++)
+    {
+        b[i].value = '';
+    }
+    turn_x = true;
+    left = 9;
+}
+
+function toggleAll(state)
+{
+    for (let i = 0; i < 9; i++)
+    {
+        b[i].disabled = state;
+    }
+}
+
+function set(index)
+{
+    if (b[index].disabled) return;
+    if (turn_x) b[index].value = 'X';
+    else b[index].value = '0';
+    b[index].disabled = true;
+    left--;
+    turn_x = !turn_x;
+    check();
+}
+
+function check()
+{
+    const lines = [[0, 1, 2],
+                   [3, 4, 5],
+                   [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+    for (let line in lines)
+    {
+        if (b[line[0]] == b[line[1]] == b[line[2]]) {
+            window.alert('Player ' + b[line[0]] + ' won');
+            toggleAll(true);
+            document.getElementById('print') .innerHTML = 'Player ' + b[line[0]] + ' won';
+            return;
+        }
+    }
+    if (left == 0)
+    {
+        window.alert('Match tie');
+        document.getElementById('print') .innerHTML = 'Match tie';
+    }
+}
+
 function myfunc() {
 
     // Setting DOM to all boxes or input field
