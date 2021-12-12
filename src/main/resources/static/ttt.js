@@ -16,6 +16,7 @@ function reset()
         b(i).value = '';
     }
     turn_x = true;
+    document.getElementById('print').innerHTML = 'Player X\'s  turn';
     left = 9;
 }
 
@@ -35,6 +36,8 @@ function set(index)
     b(index).disabled = true;
     left--;
     turn_x = !turn_x;
+    if (turn_x) document.getElementById('print').innerHTML = 'Player X\'s turn';
+    else document.getElementById('print').innerHTML = 'Player 0\'s turn';
     check();
 }
 
@@ -46,6 +49,7 @@ function onClose()
         b(i).value = '';
     }
     turn_x = true;
+    document.getElementById('print').innerHTML = 'Player X\'s  turn';
     left = 9;
 }
 
