@@ -3,7 +3,7 @@
     /* Heading */
 h1 {
     color: orangered;
-    font-size: 45px;
+    font-size: 30px;
 }
 
 /* 3*3 Grid */
@@ -30,6 +30,40 @@ h1 {
     Geneva, Tahoma, sans-serif;
 
     background-color: dodgerblue;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Save Button */
+#save {
+    box-sizing: border-box;
+    width: 95px;
+    height: 40px;
+    border: 1px solid orangered;
+    margin: auto;
+    border-radius: 4px;
+    font-family: Verdana,
+    Geneva, Tahoma, sans-serif;
+
+    background-color: orangered;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Clear Button */
+#clearbtn {
+    box-sizing: border-box;
+    width: 190px;
+    height: 40px;
+    border: 1px solid lightgrey;
+    margin: auto;
+    border-radius: 4px;
+    font-family: Verdana,
+    Geneva, Tahoma, sans-serif;
+
+    background-color: lightgrey;
     color: white;
     font-size: 20px;
     cursor: pointer;
